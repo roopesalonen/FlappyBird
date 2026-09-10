@@ -1,0 +1,18 @@
+# pygbag / web build output
+/build/
+/dist/
+*.apk
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -78,7 +78,7 @@ def draw():
         window.blit(font2.render(score_text, True, pygame.Color("black")), (80, 370))
         window.blit(font3.render(again_text, True, pygame.Color("black")), (80, 470))
 
-        pygame.mixer.Sound("sounds/gameover.mp3").play()
+        pygame.mixer.Sound("sounds/gameover.ogg").play()
 
 def move():
     global velocity_y, score, game_over, high_score
@@ -99,7 +99,7 @@ def move():
         if not pipe.passed and bird.x > pipe.x:
             score += 0.5 # 0.5 because there are 2 pipes passed at a time (top and bottom pipe)
             pipe.passed = True
-            pygame.mixer.Sound("sounds/score.mp3").play()
+            pygame.mixer.Sound("sounds/score.ogg").play()
 
         if score > high_score:
             high_score = score
@@ -163,7 +163,7 @@ while True:
         if event.type == pygame.KEYDOWN:
             if not game_over and not paused and event.key in (pygame.K_SPACE, pygame.K_UP): # if spacebar or UP-arrow is pressed
                 velocity_y = -6 # bird velocity upwards
-                pygame.mixer.Sound("sounds/fly.mp3").play()
+                pygame.mixer.Sound("sounds/fly.ogg").play()
 
             # reset game after game over
             if game_over and event.key == pygame.K_RETURN:
